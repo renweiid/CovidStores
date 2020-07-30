@@ -1,0 +1,66 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title New User
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+  link(rel='stylesheet' type='text/css' href='/css/main.css')
+#navbar
+  .container
+    .row
+      .col-sm-2.innav
+        a(href='index.html') CovidStores&trade;
+      .col-sm-2.innav
+        a(href='#') Home
+      .col-sm-2.innav
+        a(href='userList.html') Users
+      .col-sm-2.innav
+        a(href='#') Items
+      .col-sm-2.innav
+        a(href='#') Support
+      .col-sm-2.innav
+        a(href='#') Login
+.container
+  .row
+    .col-sm-3
+    .col-sm-6.Register
+      h4 Register New Users
+      form(method="POST" action='/register')
+        .form-row
+          .form-group.col-md-6.Register
+            label(for='inputFirstName') First Name
+            input#firstname.form-control(type='text' name='firstname')
+          .form-group.col-md-6.Register
+            label(for='inputLastName') Last Name
+            input#lastname.form-control(type='text' name='lastname')
+        .form-group
+          label(for='inputNationalId') National ID Number
+          input#nationalid.form-control(type='text' name='nationalid')
+        .form-group
+          label(for='inputAddress') Address
+          input#address.form-control(type='text' name='address')
+        .form-group
+          label(for='inputEmail') Email Address
+          input#email.form-control(type='email' name='email')
+        .form-row
+          .form-group.col-md-6
+            label(for='inputUsername') Username
+            input#username.form-control(type='text' name='username')
+          .form-group.col-md-6
+            label(for='inputUserPassword') Password
+            input#password.form-control(type='password' name='password')
+        .form-check.form-check-inline
+          input#inlineCheckbox1.form-check-input(type='checkbox' value='option1')
+          label.form-check-label(for='inlineCheckbox1') Sales Agent
+        .form-check.form-check-inline
+          input#inlineCheckbox2.form-check-input(type='checkbox' value='option2')
+          label.form-check-label(for='inlineCheckbox2') Manager
+        button.btn.btn-primary.btn-block.Register(type='submit') Register
+    .col-sm-3
+#register_footer.container-fluid
+  .row
+    #Copyright.col-sm
+      small
+        | Copyright &copy;CovidStores. All rights reserved 
+        br
+        | CovidStores&trade;

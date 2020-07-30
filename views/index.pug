@@ -1,0 +1,77 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title CovidStores&copy;
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  link(rel='stylesheet' type='text/css' href='/css/main.css')
+#navbar
+  .navitems
+    .container
+      .row
+        .col-sm-2.innav
+          a(href='index.pug')
+            | CovidStores&trade;
+        .col-sm-6.innav
+          a(href='#')
+            | Support
+        .col-sm-4.innav
+          a(href='#')
+            | Return Policy
+#indexcovid.container
+  .row
+    .col-sm
+      h1.main_title Welcome to CovidStores...
+      h4.subtitle
+        | Check out our collection of items for whatever you fancy, we have a convinient payment plan to help you enjoy luxury affordably!
+#indexitems.container-fluid
+  .row
+    .col-sm-3
+      .card(style='width: 18rem; height: 20rem;')
+        a(href='electronics.pug')
+          img.card-img-top(src='./images/Electronics.jpg' alt='...')
+        .card-body
+          p.card-text
+            | Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
+    .col-sm-3
+      .card(style='width: 18rem; height: 20rem;')
+        a(href='fitness.pug')
+          img.card-img-top(src='./images/fitness.jpg' alt='...')
+        .card-body
+          p.card-text
+            | Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
+    .col-sm-3
+      .card(style='width: 18rem; height: 20rem;')
+        a(href='furniture.pug')
+          img.card-img-top(src='./images/machinery.jpg' alt='...')
+        .card-body
+          p.card-text
+            | Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
+    .col-sm-3
+      .card(style='width: 18rem; height: 20rem;')
+        a(href='machinery.pug')
+          img.card-img-top(src='./images/machinery.jpg' alt='...')
+        .card-body
+          p.card-text
+            | Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
+.container.steps
+  .row
+    .col-sm-3.main_title
+      h4 STEP 1
+      p Browse our website and find your desired item
+    .col-sm-3.main_title
+      h4 STEP 2
+      p Find a CovidStore outlet, provide your details
+    .col-sm-3.main_title
+      h4 STEP 3
+      p Agree to any of our available and convinient payment
+    .col-sm-3.main_title
+      h4 STEP 4
+      p Make the initial payments and carry your item away
+.footer
+  .container
+    .row
+      .col-sm.footnote
+        p CovidStores&trade; is a registered TradeMark, unauthorised usage is prohibited!
+        small &copy;CovidStores 2020

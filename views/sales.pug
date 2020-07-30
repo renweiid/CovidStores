@@ -1,0 +1,76 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Sales agent
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+  link(rel='stylesheet', href='/css/main.css')
+#navbar
+  .container
+    .row
+      .col-sm-3
+        p.page_name
+          a(href='sales.html') CovidStores&trade;
+      .col-sm-3
+        p#userdetails.userdetails
+          a(href='index.html') Items
+      .col-sm-3
+        p#update.itemsupdate
+          a(href='#') Entries
+      .col-sm-3
+        p#sales.sales
+          a(href='#') Logout
+.container
+  .row
+    #welcome.col-sm
+      h4
+        | Welcome sales agent!
+        br
+        |  You can record all your transactions through inputing details in the field below...
+.container
+  .row
+    .col-sm
+      form(action='/sales' method='POST')
+        .form-row
+          .form-group.col-md-4
+            label(for='customerName') First Name
+            input#firstName.form-control(type='text' name='firstname')
+          .form-group.col-md-4
+            label(for='customerName') Second Name
+            input#secondName.form-control(type='text' name='secondname')
+          .form-group.col-md-4
+            label(for='customerName') Other Name
+            input#otherName.form-control(type='text' name='othername')
+        .form-row
+          .form-group.col-md-6
+            label(for='customerEmail') Email
+            input#customerEmail.form-control(type='email' name='email')
+          .form-group.col-md-6
+            label(for='inputNIN') National ID Number
+            input#inputNIN.form-control(type='text' name='nationalid')
+        .form-row
+          .form-group.col-md-6
+            label(for='inputAddress1') Address 1
+            input#inputAddress1.form-control(type='text' name='address1')
+          .form-group.col-md-6
+            label(for='inputAddress2') Address 2
+            input#inputAddress2.form-control(type='text' name='address2')
+        .form-row
+          .form-group.col-md-5
+            label(for='inputItem') Item description
+            input#inputItem.form-control(type='text' name='itemdescription')
+          .form-group.col-md-1
+            label(for='inputCount') Count
+            input#inputCount.form-control(type='number' name='count')
+          .form-group.col-md-2
+            label(for='inputPlan') Plan
+            select#inputPlan.form-control(name='plan')
+              option(selected='') Monthly
+              option Quarterly
+          .form-group.col-md-2
+            label(for='initialPay') Initial Pay
+            input#initialPay.form-control(type='text' name='initialpay')
+          .form-group.col-md-2
+            label(for='initialBalance') Initial balance
+            input#initialBalance.form-control(type='text' nname='initialbalance')
+        button.btn.btn-primary(type='submit') Submit

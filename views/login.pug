@@ -1,0 +1,48 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Login
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+  link(rel='stylesheet' type='text/css' href='/css/main.css')
+#navbar
+  .container
+    .row
+      .col-sm-8.innav
+        a(href='index.html') CovidStores&trade;
+      .col-sm-4.innav
+        a(href='#') Support
+// I have created a div to contain the middle part, the div has three columns with the side ones empty just to support the layout
+.middle_div
+  .container
+    .row
+      #column1.col-sm-1
+      #column2.col-sm-10
+        p#welcome_note Welcome to the login page!
+        form#login-aread(method="POST" action='/login')
+          .form-group
+            label(for='exampleInputUsername') Username
+            input#exampleInputUsername.form-control(type='username' name="username" aria-describedby='emailHelp')
+          .form-group
+            label(for='exampleInputPassword1') Password
+            input#exampleInputPassword1.form-control(type='password' name="password")
+          fieldset.form-group
+            .row
+              .col-sm-10
+                .form-check
+                  input#gridRadios1.form-check-input(type='radio' name='gridRadios' value='option1' checked='')
+                  label.form-check-label(for='gridRadios1')
+                    | Admin
+                .form-check
+                  input#gridRadios2.form-check-input(type='radio' name='gridRadios' value='option2')
+                  label.form-check-label(for='gridRadios2')
+                    | User
+          button.btn.btn-primary(type='submit' href='/register') Login
+      .col-sm-1
+#login_footer.container-fluid
+  .row
+    .col-sm
+      small#copyright_text
+        | Copyright &copy;CovidStores. All rights reserved 
+        br
+        | CovidStores&trade;
