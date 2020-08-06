@@ -1,0 +1,74 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Product entry
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+  link(rel='stylesheet' type='text/css' href='/css/main.css')
+#navbar
+  .container
+    .row
+      .col-sm-2
+        p.page_name
+          a(href='sales.html') Home
+      .col-sm-2
+        p#userdetails.userdetails
+          a(href='index.html') Items List
+      .col-sm-2
+        p#update.itemsupdate
+          a(href='#') Enter items
+      .col-sm-2
+        p#sales.sales
+          a(href='#') Users list
+      .col-sm-2
+        p#sales.sales
+          a(href='#') New user
+      .col-sm-2
+        p#sales.sales
+          a(href='#') Logout
+.container
+  .row
+    .col-sm.productsline
+      h2 Enter new products for the LLP program below.
+.container
+  .row
+    .col-sm
+      form(name='products')
+        fieldset
+          legend Product Details
+          .control
+            label(for='product_name') Product name
+            input#productname(name='productname' type='text')
+          .control
+            label(for='serial_number') Serial number
+            input#serialnumber(name='serialnumber' type='text')
+          .control
+            label(for='price') Price
+            input#price(name='price' type='text')
+          .control
+            label(for='additional_details') Additional details
+            textarea#additionaldetails(name='additionaldetails')
+          .control
+            label(for='category') Category
+            select#category(name='category')
+              option
+                | Electronics
+              option
+                | Fitness
+              option
+                | Machinery
+              option
+                | Furniture
+          .control
+            label(for='image') Image
+            input#image(name='image' type='file')
+        .text-center
+          button(type='submit' onclick='validate()') Submit
+#products_footer.container-fluid
+  .row
+    .col-sm
+      small#copyright_text
+        | &copy;CovidStores. All rights reserved 
+        br
+        | CovidStores&trade;
+script(src='/javascript/validateproduct.js')
