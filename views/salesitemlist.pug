@@ -1,0 +1,39 @@
+extends layout
+block content
+    header.card-header
+        h3.card-title Available Items
+        a.pug(href='#')
+          | Payments
+        a.pug(href='/sales')
+          | Sales
+        a.pug(href='/sales/salesentries')
+          | Entries  
+        a.pug(href='#')
+          | Log Out        
+        |&nbsp
+    div.form-row
+        div.col.form-group.col-md-12    
+            form.search(action='/admin/admin')
+                div.form-row
+                    div.col-md-8
+                        input.form-control(name='firstname' placeholder="Enter your search term ...")
+                    div.col-md-4
+                        input.btn.btn-dark.btn-block(type="submit")
+    table.table
+        thead.thead-dark
+            tr
+                th Product name
+                th Serial number
+                th Price
+                th Additional details
+                th Category
+                th Image
+        tbody
+            each user in users
+                tr
+                    td #{user.productname}
+                    td #{user.serialnumber}
+                    td #{user.price}
+                    td #{user.additionaldetails}
+                    td #{user.category}
+                    td #{user.image}

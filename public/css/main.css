@@ -160,6 +160,7 @@ a:hover {
 body{
   background: #f2f2f2;
   font-family: 'Open Sans', sans-serif;
+  
 }
 
 .search {
@@ -204,7 +205,7 @@ body{
   transform: translate(-50%, -50%);
 }
 .imagespace {
-    color: white;
+    color: black;
     text-align: center;
     font-family: monospace;
 }
@@ -236,6 +237,7 @@ body{
     margin-top: 50px;
 }
 .main_title {
+    margin-top: 25px;
     text-align: center;
     font-family: monospace;
 }
@@ -251,4 +253,34 @@ body{
 }
 .steps {
     margin-top: 50px;
+}
+.productsline{
+    margin-top: 30px;
+    text-align: center;
+    font-family: monospace;
+}
+.control, fieldset {
+    margin: 6px 0;
+    padding: 10px;
+    padding-left: 40px;
+}  
+label {
+    display: inline-block;
+    width: 200px;
+    vertical-align: top;
+}  
+input + label {
+    width: auto;
+}
+#another {
+    border: solid rgb(45, 45, 51) 1px;
+    margin: 50px;
+}
+#products_footer {
+    text-align: center;
+    margin-top: 15px;
+    height: 30px;
+}
+.pug{
+    margin-left: 100px;
 }

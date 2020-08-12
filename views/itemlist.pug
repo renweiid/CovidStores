@@ -1,13 +1,13 @@
 extends layout
 block content
     header.card-header
-        h4.card-title Registered users
+        h3.card-title Available Items
         a.pug(href='/admin/admin')
           | Home
+        a.pug(href='/admin/userlist')
+          | Users List
         a.pug(href='/admin/register')
           | New User  
-        a.pug(href='/admin/itemlist')
-          | Items List
         a.pug(href='/admin/productentry')
           | New Item       
         a.pug(href='#')
@@ -15,32 +15,30 @@ block content
         |&nbsp
     div.form-row
         div.col.form-group.col-md-12    
-            form.search(action='/admin/userlist')
+            form.search(action='/admin/admin')
                 div.form-row
                     div.col-md-8
-                        input.form-control(name='gender' placeholder="Enter your search term ...")
+                        input.form-control(name='firstname' placeholder="Enter your search term ...")
                     div.col-md-4
                         input.btn.btn-dark.btn-block(type="submit")
     table.table
         thead.thead-dark
             tr
-                th Firstname
-                th Lastname
-                th National Id
-                th Address
-                th Email
-                th Username
-                th Password
+                th Product name
+                th Serial number
+                th Price
+                th Additional details
+                th Category
+                th Image
         tbody
             each user in users
                 tr
-                    td #{user.firstname}
-                    td #{user.lastname}
-                    td #{user.nationalid}
-                    td #{user.address}
-                    td #{user.email}
-                    td #{user.username}
-                    td #{user.password}
+                    td #{user.productname}
+                    td #{user.serialnumber}
+                    td #{user.price}
+                    td #{user.additionaldetails}
+                    td #{user.category}
+                    td #{user.image}
                     td
                         form(method="post" action='/admin/delete')
                             input(type="hidden", placeholder="", name="id", value=user._id)

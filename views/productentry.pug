@@ -8,22 +8,19 @@ head
 #navbar
   .container
     .row
-      .col-sm-2
+      .col-sm-3
         p.page_name
-          a(href='sales.html') Home
+          a(href='/admin/admin') Home
       .col-sm-2
         p#userdetails.userdetails
-          a(href='index.html') Items List
-      .col-sm-2
-        p#update.itemsupdate
-          a(href='#') Enter items
+          a(href='/admin/itemlist') Items List
       .col-sm-2
         p#sales.sales
-          a(href='#') Users list
+          a(href='/admin/userlist') Users list
       .col-sm-2
         p#sales.sales
-          a(href='#') New user
-      .col-sm-2
+          a(href='/admin/register') New user
+      .col-sm-3
         p#sales.sales
           a(href='#') Logout
 .container
@@ -33,7 +30,7 @@ head
 .container
   .row
     .col-sm
-      form(name='products')
+      form(name='products' action='/admin/productentry' method='POST')
         fieldset
           legend Product Details
           .control

@@ -17,6 +17,7 @@ const registrationRoutes = require('./routes/registrationroute');
 const loginRoutes = require('./routes/loginroutes');
 const salesRoutes = require('./routes/salesagentsroutes');
 const indexRoutes = require('./routes/indexroutes');
+const adminroutes = require('./routes/adminroutes');
 const Register = require('./model/registration');
 const Sales = require('./model/sales');
 
@@ -69,6 +70,7 @@ app.use('/register', registrationRoutes);
 app.use('/login', loginRoutes);
 app.use('/sales', salesRoutes);
 app.use('/index', indexRoutes);
+app.use('/admin', adminroutes);
 
 // route for un existing files
 app.get('*', (req, res) => {

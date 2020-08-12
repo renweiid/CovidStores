@@ -1,0 +1,45 @@
+extends layout
+block content
+    header.card-header
+        h3.card-title Entries
+        a.pug(href='/sales')
+          | Enter sales
+        |&nbsp
+    div.form-row
+        div.col.form-group.col-md-12    
+            form.search(action='/admin/salesentries')
+                div.form-row
+                    div.col-md-8
+                        input.form-control(name='firstname' placeholder="Enter your search term ...")
+                    div.col-md-4
+                        input.btn.btn-dark.btn-block(type="submit")
+    table.table
+        thead.thead-dark
+            tr
+                th First name
+                th Second name
+                th Other name
+                th Email
+                th National Id
+                th Address
+                th Telephone
+                th Item
+                th Count
+                th Initial Pay
+                th Initial Balance
+        tbody
+            each user in users
+                tr
+                    td #{user.firstname}
+                    td #{user.secondname}
+                    td #{user.othername}
+                    td #{user.email}
+                    td #{user.nationalid}
+                    td #{user.address}
+                    td #{user.telephone}
+                    td #{user.itemdescription}
+                    td #{user.count}
+                    td #{user.initialpay}
+                    td #{user.initialbalance}
+                    
+                       

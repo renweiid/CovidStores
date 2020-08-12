@@ -10,13 +10,13 @@ head
     .row
       .col-sm-3
         p.page_name
-          a(href='sales.html') CovidStores&trade;
+          a(href='#') Payments
       .col-sm-3
         p#userdetails.userdetails
-          a(href='index.html') Items
+          a(href='/sales/salesitemlist') Items
       .col-sm-3
         p#update.itemsupdate
-          a(href='#') Entries
+          a(href='/sales/salesentries') Entries
       .col-sm-3
         p#sales.sales
           a(href='#') Logout
@@ -30,7 +30,7 @@ head
 .container
   .row
     .col-sm
-      form(action='/sales' method='POST')
+      form(action='/sales' method='POST' name='salesentry' onsubmit="return validate()")
         .form-row
           .form-group.col-md-4
             label(for='customerName') First Name
@@ -50,11 +50,11 @@ head
             input#inputNIN.form-control(type='text' name='nationalid')
         .form-row
           .form-group.col-md-6
-            label(for='inputAddress1') Address 1
-            input#inputAddress1.form-control(type='text' name='address1')
+            label(for='inputAddress1') Address
+            input#inputAddress1.form-control(type='text' name='address')
           .form-group.col-md-6
-            label(for='inputAddress2') Address 2
-            input#inputAddress2.form-control(type='text' name='address2')
+            label(for='inputtelephone') Telephone
+            input#inputAddress2.form-control(type='text' name='telephone')
         .form-row
           .form-group.col-md-5
             label(for='inputItem') Item description
@@ -72,5 +72,6 @@ head
             input#initialPay.form-control(type='text' name='initialpay')
           .form-group.col-md-2
             label(for='initialBalance') Initial balance
-            input#initialBalance.form-control(type='text' nname='initialbalance')
-        button.btn.btn-primary(type='submit') Submit
+            input#initialBalance.form-control(type='text' name='initialbalance')
+        button.btn.btn-primary(type='submit' onclick='validate()') Submit
+script(src='/javascript/validatesale.js')

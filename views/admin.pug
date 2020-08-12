@@ -1,9 +1,9 @@
 extends layout
 block content
     header.card-header
-        h4.card-title Registered users
-        a.pug(href='/admin/admin')
-          | Home
+        h3.card-title Registered Transactions
+        a.pug(href='/admin/userlist')
+          | Users List
         a.pug(href='/admin/register')
           | New User  
         a.pug(href='/admin/itemlist')
@@ -15,32 +15,40 @@ block content
         |&nbsp
     div.form-row
         div.col.form-group.col-md-12    
-            form.search(action='/admin/userlist')
+            form.search(action='/admin/admin')
                 div.form-row
                     div.col-md-8
-                        input.form-control(name='gender' placeholder="Enter your search term ...")
+                        input.form-control(name='firstname' placeholder="Enter your search term ...")
                     div.col-md-4
                         input.btn.btn-dark.btn-block(type="submit")
     table.table
         thead.thead-dark
             tr
-                th Firstname
-                th Lastname
+                th First name
+                th Second name
+                th Other name
+                th Email
                 th National Id
                 th Address
-                th Email
-                th Username
-                th Password
+                th Telephone
+                th Item
+                th Count
+                th Initial Pay
+                th Initial Balance
         tbody
             each user in users
                 tr
                     td #{user.firstname}
-                    td #{user.lastname}
+                    td #{user.secondname}
+                    td #{user.othername}
+                    td #{user.email}
                     td #{user.nationalid}
                     td #{user.address}
-                    td #{user.email}
-                    td #{user.username}
-                    td #{user.password}
+                    td #{user.telephone}
+                    td #{user.itemdescription}
+                    td #{user.count}
+                    td #{user.initialpay}
+                    td #{user.initialbalance}
                     td
                         form(method="post" action='/admin/delete')
                             input(type="hidden", placeholder="", name="id", value=user._id)

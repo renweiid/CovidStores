@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-// const passportLocalMongoose = require('passport-local-mongoose');
 
-const registrationSchema = new mongoose.Schema({
+
+const salesSchema = new mongoose.Schema({
     firstname: {
       type: String,
       required: 'please enter first name'
@@ -10,8 +10,8 @@ const registrationSchema = new mongoose.Schema({
     othername: String,
     email: String,
     nationalid: String,
-    address1: String,
-    address2: String,
+    address: String,
+    telephone: String,
     itemdescription: String,
     count: String,
     plan: {
@@ -21,4 +21,4 @@ const registrationSchema = new mongoose.Schema({
     initialpay: String,
     initialbalance: String
   });
-  module.exports = mongoose.model('Sales', registrationSchema); 
+  module.exports = mongoose.model('Sales', salesSchema); 
