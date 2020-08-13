@@ -76,6 +76,19 @@ router.get('/salesitemlist', async (req, res) => {
   }
 });
 
+//Logging out 
+router.get('/logout', (req, res) => {
+  if (req.session){
+      req.session.destroy(function (err){
+          if (err){
+
+          }else{
+              return res.redirect('/login');
+          }
+      })
+  }
+})
+
 
 
 module.exports = router;

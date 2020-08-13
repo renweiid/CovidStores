@@ -1,5 +1,5 @@
 const express = require('express');
-const bodyParser= require('body-parser')
+const bodyParser= require('body-parser');
 
 // requiring expressSession
 const expressSession = require('express-session')({
@@ -26,7 +26,7 @@ const app = express();
 
 
 
-//db
+//DB
 mongoose.connect('mongodb://localhost:27017/CovidStores', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -55,11 +55,11 @@ app.use(expressSession);
 
 
 
-// passport settings
+// Passport settings
 app.use(passport.initialize());
 app.use(passport.session());
 
-// local authentication
+// Local authentication
 passport.use(Register.createStrategy());
 passport.serializeUser(Register.serializeUser());
 passport.deserializeUser(Register.deserializeUser());
