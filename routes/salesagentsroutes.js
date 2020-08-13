@@ -81,13 +81,13 @@ router.get('/logout', (req, res) => {
   if (req.session){
       req.session.destroy(function (err){
           if (err){
-
+            res.send("Failed to destroy session")
           }else{
               return res.redirect('/login');
-          }
+        }
       })
   }
-})
+});
 
 
 
